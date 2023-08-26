@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class-03-HTML-Medias</title>
+</head>
+<body>
+    <img src="./challenges/images/img-1.jpg" alt="Casal abraçado a beira de um lago cercado de montanhas">
+    <img src="./challenges/images/img-2.jpg" alt="Pessoa escrevendo I love You com uma caneta(estilo pena) em um bilhete">
+    <!--tag(img) criar imagens;
+        (src) vai o caminho/link ;
+        (alt)nome caso a imgem de erro;
+    -->
+    <audio 
+        src="./challenges/sounds/CABEÇA DE GELO 2014.mp3"
+        controls
+        preload="metadata"
+        >
+    </audio>
+    <!--tag(audio) criar audio;
+        (autoplay)tocar automaticamente;
+        (controls) controles do meu audio;
+        (preload) pre-carregamento;
+            (auto)pre-carregar automaticamente;
+            (none)pre-carregar tudo;
+            (metadata)carregar o essencial;
+    -->
+    <video 
+        src="./challenges/videos/videoplayback."
+        controls
+        preload="metadata"
+        autoplay
+        muted
+        >
+    </video>
+    <!--tag(video) criar video;
+        (autoplay)tocar automaticamente;
+        (controls) controles do meu audio;
+        (preload) pre-carregamento;
+            (auto)pre-carregar automaticamente;
+            (none)pre-carregar tudo;
+            (metadata)carregar o essencial;
+        (muted)mutar audio do video;
+    -->
+    <!-- tag(iframe) criar quadro -->
+    <!--Youtube-->
+    <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/6B6nZtDV9I0"     title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; 
+                autoplay; 
+                clipboard-write;
+                encrypted-media;
+                gyroscope; 
+                picture-in-picture;    
+                web-share;" 
+        allowfullscreen
+        >
+    </iframe>
+    <!--Google maps-->
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d6596.394701124045!2d-39.51564020463708!3d-6.517808334368131!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1688080260556!5m2!1spt-BR!2sbr" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        >
+    </iframe>
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!4v1688080118593!6m8!1m7!1sNKrIaxvkU6MMGOwH7r3abQ!2m2!1d-6.517808334368131!2d-39.51564020463708!3f193.56955976807197!4f-0.5135306144240843!5f0.7820865974627469" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        >
+    </iframe>
+</body>
+</html>

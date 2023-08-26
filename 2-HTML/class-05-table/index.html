@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class-05-HTML-Table</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        thead{
+            background: lightseagreen;
+        }
+        tbody{
+            background: burlywood;
+        }
+        tfoot{
+            background: saddlebrown;
+        }
+        th,td{
+            border:solid 1px;
+        }
+
+    </style>
+</head>
+<body>
+    <table><!--tag(table) para criar tabelas, atributo(border="") serve para definir as bordas da minha tabela-->
+        <caption>Compras</caption><!--Titulo da minha tabela-->
+        <thead><!--Cabeçalho da minha tabela-->
+            <tr><!--tag(tr) para criar linhas-->
+                <th scope="col">Produto</th><!--tag(th) table head ou titulo da coluna-->
+                <th scope="col">Preço</th><!--tag(th) titulo da coluna-->
+            </tr>
+        </thead>
+
+        <tbody><!--Corpo da minha tabela-->
+            <tr>
+                <td>Açucar</td>
+                <td>2,25</td>
+            </tr>
+
+            <tr>
+                <td>Feijão</td>
+                <td>9,00</td>
+            </tr>
+
+            <tr>
+                <td>Arroz</td>
+                <td>25,00</td>
+            </tr>
+        </tbody>
+
+        <tfoot><!--Rodapé da minha tabela-->
+            <tr>
+                <th scope="row">Total</th>
+                <td><strong>36,25</strong></td><!--a tag(<strong>) é utilizado em conteúdos que são de "grande importância", incluindo coisas de urgentes (como alertas)-->
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

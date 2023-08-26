@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class-06-HTML-Forms</title>
+    <style>
+        form{
+            width: 320px;
+        }
+        /* input{
+            width: 100%;
+        } */
+    </style>
+</head>
+
+<body>
+    <form method="get"><!--Tag(form) Criar formulário-->
+        <!-- <input type="text">tipo texto -->
+        <!-- <input type="password">tipo senha -->
+        <!-- <input 
+                type="datetime-local" 
+                name="" 
+                id=""
+            >data e hora locais -->
+        <!-- <input 
+                type="number" 
+                max="10" 
+                min="0" 
+                step="5"
+            >tipo numero, com no maximo 10 e minimo 0, (step) pular de 5 em 5 ou o número que estiver entre "" -->
+        <!-- <input type="date">tipo data -->
+        <!-- <input type="datetime">data e hora -->
+        <!-- <input type="datetime-local">data e hora selecionar -->
+        <!-- <input 
+                type="range" 
+                min="0" 
+                max="100" 
+                value="10" 
+                step="5"
+            >barrinha de deslize -->
+        <!-- <input 
+            type="file" 
+            accept=".pdf"
+            multiple
+        >tipo pegar aquivos, (accept) image/* video/* audio/* .pdf .png .svg .docx .xls, (multiple) aceita mais de um arquivo -->
+        <!-- <input 
+            type="color"
+            value="#DDDDDD"
+            list="groupColor"
+            >tipo color -->
+        <!-- <datalist id="groupColor">
+            <option>#DDDD00</option>
+            <option>#DD00DD</option>
+            <option>#00DDDD</option>
+            <option>#aa88FF</option>
+            <option>#aa1100</option>
+        </datalist>Lista de dados -->
+        <!-- <label for="html">HTML</label> -->
+        <!-- <input type="checkbox" id="html">caixa de marcação -->
+
+        <!-- <label for="css">CSS</label> -->
+        <!-- <input type="checkbox" id="css">caixa de marcação -->
+        <!-- <br> -->
+        <!-- <label for="Masculino">Masculino</label> -->
+        <!-- <input 
+            type="radio" 
+            id="Masculino" 
+            name="term"
+        > -->
+
+        <!-- <label for="Feminino">Feminino</label> -->
+        <!-- <input 
+            type="radio" 
+            id="Feminino" 
+            name="term"
+        >Ou um ou outro nunca os 2 ao mesmo tempo -->
+        <!-- <label for="groupFruit"></label>
+        <select name="Frutas" id="groupFruit">
+            <option value="manga">manga</option>
+            <option value="acerola">acerola</option>
+            <option value="abacaxi">abacaxi</option>
+        </select>Caixa de seleção -->
+        <label for="Obs">Observações:</label>
+        <textarea 
+            name="Ob" 
+            id="Obs" 
+            cols="30" 
+            rows="10"
+            maxlength="255"
+        >
+        </textarea><!--Campo de texto-->
+        <br><br>
+        <button>Enviar</button>
+    </form>
+
+    <h1>Class Forms</h1>
+    <form method="get">
+        <label for="name">Name:</label><!--associação da rotulação do inpute ao mesmo-->
+        <input type="text" id="name" name="nome" placeholder="Digite seu nome..." required>
+        <button type="submit">Enviar</button>
+    </form>
+    <br><br>
+
+    <form method="get">
+        <fieldset>
+            <legend>Login</legend>
+
+            <section>
+                <label for="email">Email:</label><br>
+                <input type="email" name="email" id="email" placeholder="Digite seu email..." required>
+            </section>
+
+            <section>
+                <label for="Senha">Senha:</label><br>
+                <input type="password" name="Senha" id="Senha" placeholder="Digite sua Senha..." required>
+            </section>
+            <br>
+            <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+</body>
+
+</html>

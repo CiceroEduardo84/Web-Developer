@@ -1,0 +1,6 @@
+ctrl+s = salvar;
+shift+alt+cima/baixo = cópia rápida;
+tab = indetanção;
+alt+cima/baixo = mover qualquer linha de forma fácil pela minha página de código;
+shift+alt+f = identação;
+shift+delete = apagar linha

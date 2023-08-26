@@ -1,0 +1,17 @@
+h1 {
+    color: orange;
+
+}
+
+h2 {
+    color: #2f8c5f83;
+    font-family: 'Press Start 2P', cursive;
+
+}
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    letter-spacing: 4px;
+    word-spacing: 4px;
+    line-height: 24px;
+}

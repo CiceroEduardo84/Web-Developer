@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge-06-Forms</title>
+    <style>
+        body{
+            background: #ddd;
+        }
+        header{
+            text-align: center;
+        }
+        form{
+            width: 320px;
+            background: white;       
+            margin: auto;
+            border-radius: 10px;     
+        }
+        fieldset{
+            /* border-radius: 10px; */
+            text-align:left;
+        }
+        button{
+            margin-bottom: 10px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro</h1>
+    </header>
+
+    <main>
+        <form method="get">
+            <fieldset>
+                <legend>
+                    <strong>DADOS PESSOAIS</strong>
+                </legend>
+
+                <section>
+                    <label for="name">Nome:</label>
+                    <input 
+                        type="text" 
+                        name="name" 
+                        id="name" 
+                        placeholder="Digite seu nome" required 
+                        autofocus
+                    >
+                </section>
+
+                <br>
+
+                <section>
+                    <label for="Nascimento">Nascimento:</label>
+                    <input 
+                        type="date" 
+                        name="Nascimento" 
+                        id="Nascimento" 
+                        required
+                    >
+                </section>
+
+                <br>
+
+                <section>
+                    <label for="rg">RG:</label>
+                    <input 
+                        type="text" 
+                        name="rg" 
+                        id="rg" 
+                        placeholder="Digite seu RG" 
+                        pattern="[0-9]{11}"
+                        maxlength="11"
+                        minlength="9"
+                        required
+                    >
+                </section>
+
+                <br>
+
+                <section>
+                    <label for="CPF">CPF:</label>
+                    <input 
+                        type="text" 
+                        name="CPF" 
+                        id="CPF" 
+                        placeholder="Digite seu CPF"
+                        pattern="[0-9]{11}"
+                        maxlength="11"
+                        minlength="11"
+                        title="Digite os 11 número do seu cpf!"
+                        required
+                    >
+                </section>
+
+                <br>
+
+                <section>
+                    <span>
+                        <label for="M">Masculino</label>
+                        <input 
+                            type="radio" 
+                            name="sexo" 
+                            id="M"
+                            value="M"
+                            required
+                        >
+                    </span>
+
+                    <span>
+                        <label for="F">Feminino</label>
+                        <input 
+                            type="radio" 
+                            name="sexo" 
+                            id="F"
+                            value="F"
+                            required
+                            >
+                    </span>
+                </section>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>
+                    <strong>LINGUAGENS DE DOMÍNIO</strong>
+                </legend>
+
+                <section>
+                    <span>
+                        <label for="html">HTML</label>
+                        <input 
+                            type="checkbox" 
+                            name="html" 
+                            id="html"
+                            value="Html"
+                        >
+                    </span>
+
+                    <span>
+                        <label for="css">CSS</label>
+                        <input 
+                            type="checkbox" 
+                            name="css" 
+                            id="css"
+                            value="Css"
+                        >
+                    </span>
+
+                    <span>
+                        <label for="JS">JavaScript</label>
+                        <input 
+                            type="checkbox" 
+                            name="JS" 
+                            id="JS"
+                            value="Js"
+                        >
+                    </span>
+
+                    <span>
+                        <label for="sql">Sql</label>
+                        <input 
+                            type="checkbox"
+                            name="sql"
+                            id="sql"
+                            value="sql"
+                        >
+                    </span>
+                </section>
+            </fieldset>
+
+            <br>
+
+            <fieldset>
+                <legend>
+                    <strong>DADOS DE LOGIN</strong>
+                </legend>
+                <section>
+                    <label for="email">E-mail:</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        placeholder="username@email.com"
+                        required
+                    >
+                </section>
+
+                <br>
+                
+                <section>
+                    <label for="Password">Password:</label>
+                    <input 
+                        type="password" 
+                        id="Password" 
+                        name="Password"
+                        placeholder="Digite a senha"
+                        required
+                    >
+                </section>
+                
+                <br>
+
+                <section>
+                    <label for="image">Imagem:</label>
+                    <input 
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept="Image/*"
+                        required
+                    >
+                </section>
+            </fieldset>
+            
+            <br>
+
+            <fieldset>
+                <legend>
+                    <strong>OBSERVAÇÕES</strong>
+                </legend>
+                <section>
+                    <textarea 
+                        name="Obs" 
+                        id="obs"
+                        cols="30" 
+                        rows="10"
+                        placeholder=""
+                    >
+                    </textarea>
+                </section>
+            </fieldset>
+            <br>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+        </form>
+    </main>
+</body>
+
+</html>
