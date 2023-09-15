@@ -5,7 +5,7 @@
 let myName = prompt("Digite seu nome:");
 alert("Olá "+myName+", vamos fazer uma soma!");
 
-let number1 = Number(prompt("Digite o primeiro número:"));
-let number2 = Number(prompt("Digite o segundo número:"));
-let sum = number1 + number2;
-alert(" A soma do " + number1 + " e o " + number2 + " é " +sum + ".");
+const num1 = Number(prompt("Digite o primeiro número:"));
+const num2 = Number(prompt("Digite o segundo número:"));
+const addition = num1 + num2;
+alert(`A soma do ${num1} e o ${num2} é: ${addition}`);
