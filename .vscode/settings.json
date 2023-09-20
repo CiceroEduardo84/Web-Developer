@@ -1,3 +1,7 @@
 {
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "console-ninja.toolsToEnableSupportAutomaticallyFor": {
+    "live-server-extension": true,
+    "live-preview-extension": true
+  }
 }
