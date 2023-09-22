@@ -5,4 +5,4 @@
 const num1 = Number(prompt("Digite um número para saber se é par ou é ímpar:"));
 const result = num1 % 2 == 0 ? "Par" : "Impar";
 
-window.alert(`O número é ${result}`);
+window.alert(`O número ${num1} é ${result}`);
