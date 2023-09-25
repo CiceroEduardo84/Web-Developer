@@ -36,3 +36,9 @@ console.log(
     ? "Teste Verdadeiro"
     : "Teste Falso"
 );
+
+const console = {
+  log: () => {
+    return "Imprimir"
+  },
+};
