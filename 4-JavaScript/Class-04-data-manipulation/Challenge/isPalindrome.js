@@ -6,7 +6,7 @@ function palindromeCheck(texte) {
   const normalText = texte.toLowerCase().replaceAll(" ", "");
   const reverseText = normalText.split("").reverse().join("");
 
-  return normalText === reverseText;
+  return normalText == reverseText;
 }
 
 const isPalindrome = prompt("Digite o possivel palindromo:");
