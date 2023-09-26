@@ -9,6 +9,7 @@ console.log(myName[1]);
 console.log(myName.toLocaleLowerCase());
 console.log(myName.toLocaleUpperCase());
 console.log(myName.toUpperCase());
+console.log(myName.toLowerCase());
 
 console.log((myName[1] = "M")); // string immutable
 console.log((myName = "Outra coisa"));
@@ -37,7 +38,7 @@ console.log(
     : "Teste Falso"
 );
 
-const console = {
+const console2 = {
   log: () => {
     return "Imprimir"
   },
