@@ -13,6 +13,8 @@ const average = studentAverage(grade1, grade2);
 
 if (average >= 7) {
   alert(`Média: ${average}\n Situação: aprovado`);
+} else if (average >= 4) {
+  alert(`Média: ${average} \n Situação: recuperação`);
 } else {
   alert(`Média: ${average} \n Situação: reprovado`);
 }
