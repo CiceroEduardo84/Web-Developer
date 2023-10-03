@@ -24,11 +24,11 @@ function convertMedia(media) {
   Number(media);
   if (media >= 90 && media <= 100) {
     noteAbc = "A";
-  } else if (media >= 80 && media <= 89) {
+  } else if (media >= 80 && media < 90) {
     noteAbc = "B";
-  } else if (media >= 70 && media <= 79) {
+  } else if (media >= 70 && media < 80) {
     noteAbc = "C";
-  } else if (media >= 60 && media <= 69) {
+  } else if (media >= 60 && media < 70) {
     noteAbc = "D";
   } else if (media >= 0 && media < 60) {
     noteAbc = "F";
