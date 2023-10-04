@@ -1,36 +1,44 @@
-// Array Manipulation: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array
-const myArray = ["A"];
-const myArray2 = Array("A", 1, () => "a");
+const myArray = Array("A", 1, () => "a");
 
 console.log(myArray);
-console.log(myArray2[0]);
-console.log(myArray2[2]());
-console.log(myArray2.join("_"));
+console.log(myArray[0]);
+console.log(myArray[2]());
+console.log(myArray.join("_"));
 
-const myName = "Cicero Eduardo";
-console.log(myName.slice(3, 7));
+const myName = "Emanuel";
+console.log(myName.slice(1, 5));
 console.log(myName.split("").reverse().join(""));
 
-const arrayTechs = ["HTML", "CSS", "GIT", "Node", "GitHub"];
-arrayTechs.push("JavaScript"); //adiciona ao final
-arrayTechs.push("So acredito vendo!");
-arrayTechs.pop(); //remove no final
+const arrayTechs = ["HTML", "CSS", "Git"];
 
-const arrayRemove = arrayTechs.pop(); // LIFO
-console.log(arrayRemove + "");
+arrayTechs.push("JavaScript");
+arrayTechs.push("Só acredito veno!");
 
-const removeItem = arrayTechs.shift(""); //remove no incio
-console.log(removeItem);
-arrayTechs.unshift("React"); //adiciona ao inicio
+const removeItemEND = arrayTechs.pop(); // LIFO
+console.log(removeItemEND + " foi removido com sucesso!");
+
+const removeItemSTART = arrayTechs.shift();
+console.log(removeItemSTART + " foi removido com sucesso!");
+
+arrayTechs.unshift("React");
+arrayTechs.unshift("SQL");
 
 console.log(arrayTechs);
-console.log(arrayTechs.includes("React"));
-console.log("A" == "a"); //Js is caseSensi.
 
-console.log(arrayTechs.indexOf("Git")); // -1 not exists
+console.log(arrayTechs.includes("JavaScript"));
+console.log("A" == "a");
+
+console.log(arrayTechs.indexOf("GiT")); // -1 not exist
+
 console.log(arrayTechs.keys());
-console.log(arrayTechs.slice(0, 2));
+
+console.log(arrayTechs.slice(-1));
 console.log(arrayTechs.slice(-3, -1));
-console.log(arrayTechs.splice(-1));
+
 console.log(arrayTechs);
-console.log(myArray2.concat(arrayTechs));
+
+console.log(arrayTechs.splice(-2));
+
+console.log(arrayTechs);
+
+console.log(myArray.concat(arrayTechs));
