@@ -8,28 +8,47 @@
 function convertTemperature(temp) {
   let degreeTemp = String(temp).toUpperCase().split(" ").join("");
   let degreeArray = Array.from(degreeTemp);
-  let indexF = degreeArray.indexOf("F")
-  let indexC = degreeArray.indexOf("C")
-  
-  let scaleDegree = degreeArray.slice(indexF);
-  let newDegree = Number(scaleDegree.join(""));
+  let indexF = degreeArray.indexOf("F");
+  let indexC = degreeArray.indexOf("C");
 
-  return newDegree;
-
-  if (type === "C") {
-    return (temp * 9) / 5 + 32;
-  } else if (type === "F") {
-    return ((temp - 32) * 5) / 9;
-  } else {
+  if (indexF == -1 && indexC == -1) {
     throw new Error(
       "Escala não identificada, insira 'C' ou 'F': Ex: 10F ou 20C."
     );
+  } else if (indexF != -1 && indexC != -1) {
+    throw new Error(
+      "Indique apenas uma escala por vez, insira 'C' ou 'F': Ex: 10F ou 20C."
+    );
+  } else {
+    let scaleDegree;
+
+    if (indexF != -1) {
+      scaleDegree = degreeArray.splice(indexF);
+    } else if (indexC != -1) {
+      scaleDegree = degreeArray.splice(indexC);
+    }
+
+    let newDegree = Number(degreeArray.join(""));
+
+    if (isNaN(newDegree)) {
+      throw new Error("Valor inválido! Insira conforme exemplo: 10F ou 20C.");
+    } else {
+      if (scaleDegree == "C") {
+        return ((newDegree * 9) / 5 + 32).toLocaleString("pt-BR") + "F";
+      } else if (scaleDegree == "F") {
+        return (((newDegree - 32) * 5) / 9).toLocaleString("pt-BR") + "C";
+      } else {
+        throw new Error(
+          "Escala não identificada, insira 'C' ou 'F': Ex: 10F ou 20C."
+        );
+      }
+    }
   }
 }
 
 try {
-  let temperature = " 10 F";
-  console.log(convertTemperature(temperature));
+  let temperature = " 20    F";
+  console.log(`${temperature.toUpperCase().split(" ").join("")} = ${convertTemperature(temperature)}`);
 } catch (error) {
   console.log(error);
 }
