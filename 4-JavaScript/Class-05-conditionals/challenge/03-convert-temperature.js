@@ -5,40 +5,36 @@
 
 // C = (F - 32) * 5/9
 // F = C * 9/5 + 32
-function convertTemperature(temp) {
-  let degreeTemp = String(temp).toUpperCase().split(" ").join("");
-  let degreeArray = Array.from(degreeTemp);
-  let indexF = degreeArray.indexOf("F");
-  let indexC = degreeArray.indexOf("C");
-  let scaleDegree;
-  let newDegree;
 
-  if (indexF != -1) {
-    scaleDegree = degreeArray.splice(indexF, 1).join("");
-  } else if (indexC != -1) {
-    scaleDegree = degreeArray.splice(indexC, 1).join("");
+function degreeConvert(degree) {
+  const degreeAux = degree.split(" ").join("");
+  const arrayDegree = Array.from(degreeAux);
+  const scaleDegree = arrayDegree.pop().toUpperCase();
+  const newDegree = Number(arrayDegree.join(""));
+
+  if (isNaN(newDegree)) throw new Error("Valor inválido!");
+
+  function convertCelsiusToFahrenheit() {
+    return ((newDegree * 9) / 5) + 32;
+  }
+  function convertFahrenheiToCelsius() {
+    return ((newDegree - 32) * 5)/9;
   }
 
-  newDegree = Number(degreeArray.join(""));
-
-  if (isNaN(newDegree) || (scaleDegree !== "C" && scaleDegree !== "F")) {
-    throw new Error("Valor inválido! Insira conforme exemplo: 10F ou 20C.");
-  } else if (scaleDegree == "C") {
-    return ((newDegree * 9) / 5 + 32).toLocaleString("pt-BR") + "F";
-  } else if (scaleDegree == "F") {
-    return (((newDegree - 32) * 5) / 9).toLocaleString("pt-BR") + "C";
-  } else {
-    throw new Error("Escala não identificada, insira 'C' ou 'F': Ex: 10F ou 20C.");
+  switch (scaleDegree) {
+    case "C":
+      return convertCelsiusToFahrenheit() + "F";
+    case "F":
+      return convertFahrenheiToCelsius() + "C"
+    default:
+      throw new Error("Escala não Identificada!")
   }
 }
 
 try {
-  let temperature = "2c0";
-  console.log(
-    `${temperature.toUpperCase().split(" ").join("")} = ${convertTemperature(
-      temperature
-    )}`
-  );
+  const temperature = "300  f c";
+  const temperatureConverted = degreeConvert(temperature);
+  console.log(`${temperature.toUpperCase()} = ${temperatureConverted}`);
 } catch (error) {
-  console.log(error);
+  console.error(error);
 }
