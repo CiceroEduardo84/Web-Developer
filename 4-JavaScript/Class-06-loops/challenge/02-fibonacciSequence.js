@@ -1,6 +1,6 @@
 // Crie uma função que reproduza a sequencia de Fibonacci
 // Passe como argumento quantos números deseja reproduzir
-function sequenciaFibonacci(number) {
+function sequenceFibonacci(number) {
   if (number <= 0) return null;
   if (number === 1) return 0;
 
@@ -12,5 +12,5 @@ function sequenciaFibonacci(number) {
 }
 
 let number = Number(prompt("Digite quantos números de fibonacci deseja:"));
-const seq = sequenciaFibonacci(number);
+const seq = sequenceFibonacci(number);
 document.write(seq);
