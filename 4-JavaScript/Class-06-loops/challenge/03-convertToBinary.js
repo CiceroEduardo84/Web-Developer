@@ -1,5 +1,5 @@
 // Crie um algoritmo que receba um número qualquer
-// e apresente para o usuario o numero binario do valor apresentado
+// e apresente para o usuario o numero binario do valor apresentado velor
 function decimalToBinary(number) {
   let result = [];
   let aux = 0;
@@ -9,25 +9,29 @@ function decimalToBinary(number) {
     number = (number - aux) / 2;
     result[i] = aux;
   }
-
-  return result.splice("").reverse().join("");
+  return result.reverse().join("");
 }
 
 while (true) {
-  const userNumber = prompt("Digite o numero que deseja converter para binario:");
+  const userNumber = prompt("Digite o número que deseja converter para binário:");
 
   if (userNumber === null) {
     alert("Programa encerrado!");
     break;
-  } else if (userNumber < 0 || isNaN(userNumber)) {
-    alert("Digite apenas número inteiros prositivos!");
-    continue;
   } else {
-    const binaryNumber = decimalToBinary(userNumber);
-    document.write(`O numero: ${userNumber} em binario é ${binaryNumber}`);
+    const parsedNumber = parseInt(userNumber, 10);
+
+    if (isNaN(parsedNumber) || parsedNumber < 0) {
+      alert("Digite apenas números inteiros positivos!");
+      continue;
+    }
+
+    const binaryNumber = decimalToBinary(parsedNumber);
+    document.write(`O número ${parsedNumber} em binário é ${binaryNumber}`);
     break;
   }
 }
+
 
 // console.log(decimalToBinary(27)); // Deve imprimir '11011'
 // console.log(decimalToBinary(100)); // Deve imprimir '1100100'
