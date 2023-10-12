@@ -21,6 +21,7 @@ Digite a opção desejada:
 */
 const listItens = [];
 let menuOption;
+
 while (true) {
   menuOption = prompt(`
     Digite a opção desejada:
@@ -29,8 +30,53 @@ while (true) {
     3 - Remover item cadastrado
     4 - Sair do programa
     `);
+
+  if (menuOption == "") {
+    alert("Escolha uma das opções!");
+  }
   if (menuOption === "4" || menuOption === null) {
     break;
+  }
+
+  switch (menuOption) {
+    case "1":
+      while (true) {
+        let registerItems = prompt("Digite o Item a ser inserido:");
+        let toSpaces;
+
+        if (registerItems === null) {
+          break;
+        }
+
+        toSpaces = registerItems.trimStart().trimEnd();
+        if (toSpaces === "") {
+          alert("Digite um item!");
+          continue;
+        }
+        if (listItens.includes(toSpaces)) {
+          alert("Item já está cadastrado!");
+          continue;
+        } else {
+          listItens.push(toSpaces);
+          alert(`Item "${toSpaces}" cadastrado com sucesso!`);
+          continue;
+        }
+      }
+      break;
+
+    case "2":
+      if (listItens.length === 0) {
+        alert("Lista vazia!");
+      } else {
+        alert(listItens.join("" + "\n"));
+      }
+      break;
+
+    case "3":
+      break;
+
+    default:
+      alert("Opção invalida!");
   }
 }
 alert("Programa encerrado!");
