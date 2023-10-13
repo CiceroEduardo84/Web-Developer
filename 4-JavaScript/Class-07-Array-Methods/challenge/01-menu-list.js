@@ -73,6 +73,38 @@ while (true) {
       break;
 
     case "3":
+      if (listItens.length === 0) {
+        alert("Lista vazia!");
+        break;
+      }
+      if (listItens.length === 1) {
+        let item = listItens.pop();
+        alert(`Item ${item} removido com sucessso`);
+        break;
+      }
+
+      while (true) {
+        let removeItem = prompt("Digite o item a ser removido:");
+        let toSpaces;
+
+        if (removeItem === null) {
+          break;
+        }
+
+        toSpaces = removeItem.trimStart().trimEnd();
+        if (toSpaces === "") {
+          alert("Digite um item para poder removelo!");
+          continue;
+        }
+        if (listItens.includes(removeItem)) {
+          listItens.splice(listItens.indexOf(removeItem), 1);
+          alert(`Item "${removeItem}" removido com sucesso com sucesso!`);
+          continue;
+        } else {
+          alert("O item não existe!");
+          continue;
+        }
+      }
       break;
 
     default:
