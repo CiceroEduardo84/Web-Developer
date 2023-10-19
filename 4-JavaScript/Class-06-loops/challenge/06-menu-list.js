@@ -19,6 +19,7 @@ Digite a opção desejada:
 - Sair do programa quando escolher a opção 4 ou cancelar
 - Se não escolher uma das opções do menu mostrar mensagem de alerta
 */
+
 const listItens = [];
 let menuOption;
 
@@ -42,23 +43,27 @@ while (true) {
     case "1":
       while (true) {
         let registerItems = prompt("Digite o Item a ser inserido:");
-        let toSpaces;
 
         if (registerItems === null) {
           break;
         }
 
-        toSpaces = registerItems.trimStart().trimEnd();
-        if (toSpaces === "") {
+        registerItems = registerItems
+          .trim()
+          .split(" ")
+          .filter((registerItems) => registerItems !== "")
+          .join(" ");
+
+        if (registerItems === "") {
           alert("Digite um item!");
           continue;
         }
-        if (listItens.includes(toSpaces)) {
+        if (listItens.includes(registerItems)) {
           alert("Item já está cadastrado!");
           continue;
         } else {
-          listItens.push(toSpaces);
-          alert(`Item "${toSpaces}" cadastrado com sucesso!`);
+          listItens.push(registerItems);
+          alert(`Item "${registerItems}" cadastrado com sucesso!`);
           continue;
         }
       }
@@ -111,4 +116,5 @@ while (true) {
       alert("Opção invalida!");
   }
 }
+
 alert("Programa encerrado!");
