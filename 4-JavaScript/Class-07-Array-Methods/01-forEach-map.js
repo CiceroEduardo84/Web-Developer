@@ -31,3 +31,22 @@ const realConverted = dollar.map((value) => {
 
 console.log(dollar);
 console.log(realConverted);
+
+const rectangles = [
+  { widht: 4, height: 5 },
+  { widht: 5, height: 6 },
+  { widht: 6, height: 7 },
+  { widht: 7, height: 8 },
+  { widht: 8, height: 9 },
+];
+
+const calculateAreas = rectangles.map((value, index) => {
+  return {
+    name: `Retângulo ${index + 1}`,
+    area: value.widht * value.height,
+  };
+});
+
+console.log(calculateAreas);
+console.table(calculateAreas);
+document.write(JSON.stringify(calculateAreas));
