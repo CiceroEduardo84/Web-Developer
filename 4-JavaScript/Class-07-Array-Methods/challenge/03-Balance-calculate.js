@@ -20,33 +20,35 @@ const expenses = [
   "R$ 120,34",
   "food",
   "R$ 1300,62",
+  "cabaré",
+  "R$ 898,94",
 ];
 
 const incomesValues = incomes.filter((value) => value.includes("R$"));
-const incomesValuesNumbers = incomesValues.map((value) =>
-  Number(value.replace("R$", "").replace(",", "."))
-);
-const sumIncomes = incomesValuesNumbers.reduce((a, b) => a + b, 0);
+const incomesValuesNumbers = incomesValues.map((value) => {
+  return Number(value.replace("R$", "").replace(",", "."));
+});
+const sumIncomes = incomesValuesNumbers.reduce((a, b) => a + b);
 
 const expensesValues = expenses.filter((value) => value.includes("R$"));
-const expensesValuesNumbers = expensesValues.map((value) =>
-  Number(value.replace("R$", "").replace(",", "."))
-);
-const sumExpenses = expensesValuesNumbers.reduce((a, b) => a + b, 0);
+const expensesValuesNumbers = expensesValues.map((value) => {
+  return Number(value.replace("R$", "").replace(",", "."));
+});
+const sumExpenses = expensesValuesNumbers.reduce((a, b) => a + b);
 
 let statusBalance;
 let resultbalance = sumIncomes - sumExpenses;
 
-if (resultbalance > 0) {
+if (sumIncomes > sumExpenses) {
   statusBalance = "Existe um saldo positivo na sua conta!";
-} else if (resultbalance < 0) {
+} else if (sumIncomes < sumExpenses) {
   statusBalance = "Conta está vazia e existe dividas!";
-} else {
-  statusBalance = "A conta está vazia!";
+} else if (sumIncomes === sumExpenses) {
+  statusBalance = "Sem saldo mas sem dívidas!";
 }
 
 console.table(`
-  Salrio:${sumIncomes.toLocaleString("pt-br", {
+  Salário:${sumIncomes.toLocaleString("pt-br", {
     style: "currency",
     currency: "brl",
   })}

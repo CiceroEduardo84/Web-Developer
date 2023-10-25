@@ -6,23 +6,25 @@
 
 const students = [
   { name: "Aluno A", grades: [7, 7, 6], absences: 3 },
-  { name: "Aluno B", grades: [6, 8, 7], absences: 4 },
+  { name: "Aluno B", grades: [6, 8, 7, 8.534353], absences: 4 },
   { name: "Aluno C", grades: [9, 8, 10], absences: 6 },
   { name: "Aluno D", grades: [9, 7, 8], absences: 2 },
   { name: "Aluno E", grades: [8, 7, 5], absences: 7 },
 ];
 
-const selectStudents = students
-  .map((students) => {
-    const avarage =
-      students.grades.reduce((a, b) => a + b) / students.grades.length;
+const selectStudents = students.map((student) => {
+  const avarage =
+    student.grades.reduce((a, b) => a + b) / student.grades.length;
 
-    return {
-      name: students.name,
-      avarage: avarage,
-      absences: students.absences,
-    };
-  })
-  .filter((students) => students.avarage >= 7 && students.absences < 5);
+  return {
+    name: student.name,
+    avarage: avarage,
+    absences: student.absences,
+  };
+});
 
-console.table(selectStudents);
+const selectedStudents = selectStudents.filter(
+  (student) => student.avarage >= 7 && student.absences < 5
+);
+
+console.table(selectedStudents);
