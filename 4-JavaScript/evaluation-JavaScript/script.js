@@ -37,7 +37,7 @@ let array1 = ["A", "B", "C"];
 array1.push("D");
 array1.shift();
 array1.unshift("T");
-// console.log(array1);
+console.log(array1);
 
 //* Questão 5 (for):
 // Liste todos os valores do array criado na questão anterior ultilizando o for.
@@ -46,7 +46,7 @@ for (let index = 0; index < array1.length; index++) {
   console.log(array1[index]);
 }
 for (const iterator of array1) {
-  // console.log(iterator);
+  console.log(iterator);
 }
 
 //* Questão 6 (while):
@@ -76,7 +76,7 @@ if (velMoto > 60) {
 } else {
   statusMult = "Você não tem multa!";
 }
-// console.log(statusMult);
+console.log(statusMult);
 
 //* Questão 8 (array methods):
 // Uma empresa vai dar 10% de aumento para seus funcionários
