@@ -3,9 +3,12 @@
 //* Questão 1 (Data Types):
 // Declare as seguintes variáveis e atribua os valores por tipo: Sting, Number, Boolean, Function, Array, Object
 
+//Primitive types
 let result1 = "Resolution";
 let result2 = 2;
 let result3 = true;
+
+//Structural types
 let result4 = () => {};
 let result5 = ["A", "B", "C"];
 let result6 = { nome: "Eduardo", tel: "9090 o resto tu inventa" };
@@ -20,6 +23,7 @@ let divisão = 12 / 3;
 let resto = 12 % 3;
 let potenciacao = 12 ** 3;
 let raiz = 144 ** (1 / 2);
+let raiz2 = Math.sqrt(144);
 
 //* Questão 3 (Functions):
 // Crie e execute uma função de nome 'test" que retorne "JavaScript" concatenado com um valor passado como argumento e imprima seu retorno.
@@ -35,8 +39,9 @@ console.log(test(value));
 
 let array1 = ["A", "B", "C"];
 array1.push("D");
-array1.shift();
-array1.unshift("T");
+// array1.shift();
+// array1.unshift("T");
+array1[0] = "E";
 console.log(array1);
 
 //* Questão 5 (for):
