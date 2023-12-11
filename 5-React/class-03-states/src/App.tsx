@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 type UserData = {
   name: string;
@@ -9,6 +9,7 @@ type UserData = {
 export function App() {
   const [count, setCount] = useState(0);
   const [name, setName] = useState("EmanuelQuintino");
+  const [auxName, setAuxName] = useState("");
   const [data, setData] = useState<UserData>({} as UserData);
 
   function addCount() {
@@ -21,11 +22,16 @@ export function App() {
     setName(event.target.value);
   }
 
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+    setAuxName(name);
+  }
+
   useEffect(() => {
-    fetch(`https://api.github.com/users/${name}`)
+    fetch(`https://api.github.com/users/${auxName}`)
       .then((response) => response.json())
       .then((data) => setData(data));
-  }, [name, count]);
+  }, [auxName]);
 
   // console.log(data);
 
@@ -35,7 +41,14 @@ export function App() {
       <p>Name: {name}</p>
       <p>Count: {count}</p>
       <button onClick={addCount}>Add &gt;</button>
-      <input type="text" onChange={handleChangeName} />
+
+      <form
+        onSubmit={handleSubmit}
+        style={{ textAlign: "center", marginTop: 24 }}
+      >
+        <input type="text" onChange={handleChangeName} />
+        <button>Pesquisar</button>
+      </form>
 
       {data && (
         <section>
