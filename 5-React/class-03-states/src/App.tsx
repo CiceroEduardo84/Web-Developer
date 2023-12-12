@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { UserCard } from "./components/UserCard";
 
 type UserData = {
   name: string;
@@ -8,7 +9,7 @@ type UserData = {
 
 export function App() {
   const [count, setCount] = useState(0);
-  const [name, setName] = useState("EmanuelQuintino");
+  const [name, setName] = useState("");
   const [auxName, setAuxName] = useState("");
   const [data, setData] = useState<UserData>({} as UserData);
 
@@ -51,11 +52,11 @@ export function App() {
       </form>
 
       {data && (
-        <section>
-          <h2>{data.name}</h2>
-          <img src={data.avatar_url} alt="" />
-          <p>{data.bio}</p>
-        </section>
+        <UserCard
+          name={data.name}
+          avatar={data.avatar_url}
+          bio={data.bio}
+        />
       )}
     </>
   );
