@@ -14,7 +14,7 @@ router.get("/pokemon", (_req, res) => {
   ]);
 });
 
-//route params
+//route params(obrigatorio)
 router.get("/user/:id", (req, res) => {
   const { id } = req.params;
   res.send({ id });
