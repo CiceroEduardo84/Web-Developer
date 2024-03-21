@@ -21,17 +21,20 @@ export const userControllers = {
     res.status(200).json({ user: id });
   },
 
-  update(req: Request, res: Response) {
-    const { id } = req.params;
-    const { name, age } = req.body;
+  async update(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { id } = req.params;
+      const { name, age } = req.body;
 
-    if (id && name && age) {
-      console.log("Updated", { id, name, age });
-      res.status(200).json({ status: `User ${id} updated` });
-      return;
+      if (id && name && age) {
+        console.log("Updated", { id, name, age });
+        return res.status(200).json({ status: `User ${id} updated` });
+      }
+
+      throw res.status(400).json({ status: "User not updated" });
+    } catch (error) {
+      next(error);
     }
-
-    res.status(400).json({ status: "User not updated" });
   },
 
   delete(req: Request, res: Response) {
