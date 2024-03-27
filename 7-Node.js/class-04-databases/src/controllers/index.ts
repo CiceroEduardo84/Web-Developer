@@ -50,8 +50,39 @@ export const userControllers = {
     }
   },
 
-  async update(req: Request, res: Response) {
-    res.send({ message: "updated!" });
+  async update(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { id } = req.params;
+      const { name, email, password, newPassword } = req.body;
+      const db = await sqliteConnection();
+
+      const user = await db.get("SELECT * FROM users WHERE id = ?;", [id]);
+      if (!user) throw res.status(404).json({ message: "User not found!" });
+
+      const passwordCheck = await compare(password, user.password);
+      if (!passwordCheck) {
+        throw res.status(401).json({ message: "Invalid password!" });
+      }
+
+      const userEmail = await db.get("SELECT * FROM users WHERE email= ?;", [
+        email,
+      ]);
+      if (userEmail && userEmail.id != id) {
+        throw res.status(404).json({ message: "Email already exist!" });
+      }
+
+      const updateQuery = `
+      UPDATE users 
+      SET name = ?, email = ?, password = ?, updated_at = DATETIME('now')
+      WHERE id = ?;
+      `;
+
+      const passwordHash = await hash(newPassword, 10);
+      await db.run(updateQuery, [name, email, passwordHash, id]);
+      return res.status(200).json({ message: "User updated!" });
+    } catch (error) {
+      return next(error);
+    }
   },
 
   async delete(req: Request, res: Response) {
